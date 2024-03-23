@@ -4,7 +4,7 @@ import Searchbar from "../components/Searchbar/Searchbar";
 import Location from "../components/Location/Location";
 import LocalReport from "../components/LocalReport/LocalReport";
 import DailyForecast from "../components/DailyForecast/DailyForecast";
-// import WeeklyForecast from "../components/WeeklyForecast/WeeklyForecast";
+import WeeklyForecast from "../components/WeeklyForecast/WeeklyForecast";
 
 function Dashboard() {
     return (
@@ -25,7 +25,7 @@ function Dashboard() {
                                 <DailyForecast />
                             </div>
                         </div>
-                        {/* <WeeklyForecast /> */}
+                        <WeeklyForecast />
                     </div>
                 </div>
             </div>
