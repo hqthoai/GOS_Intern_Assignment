@@ -1,9 +1,9 @@
 import WorldWeather from "../components/WorldWeather/WorldWeather";
 import background from '../assets/images/bg.jpg'
 import Searchbar from "../components/Searchbar/Searchbar";
-// import Location from "../components/Location/Location";
-// import LocalReport from "../components/LocalReport/LocalReport";
-// import DailyForecast from "../components/DailyForecast/DailyForecast";
+import Location from "../components/Location/Location";
+import LocalReport from "../components/LocalReport/LocalReport";
+import DailyForecast from "../components/DailyForecast/DailyForecast";
 // import WeeklyForecast from "../components/WeeklyForecast/WeeklyForecast";
 
 function Dashboard() {
@@ -17,7 +17,7 @@ function Dashboard() {
                     <div className="grid grid-row gap-4">
                         <Searchbar />
                         <Location />
-                        {/* <div className="grid grid-cols-3 md:gap-4 gap-2">
+                        <div className="grid grid-cols-3 md:gap-4 gap-2">
                             <div className="col-span-1">
                                 <LocalReport />
                             </div>
@@ -25,7 +25,7 @@ function Dashboard() {
                                 <DailyForecast />
                             </div>
                         </div>
-                        <WeeklyForecast /> */}
+                        {/* <WeeklyForecast /> */}
                     </div>
                 </div>
             </div>
