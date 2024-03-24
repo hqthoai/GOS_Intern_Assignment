@@ -13,8 +13,7 @@ function Searchbar({ setCityName }) {
         setSearchInput(address);
         try {
             const results = await geocodeByAddress(address);
-            const coordinates = await getLatLng(results[0]);
-            setCityName(await getCityFromCoordinates(coordinates.lat, coordinates.lng))
+            setCityName(results[0].formatted_address);
         } catch (error) {
             console.error('Error', error);
         }
