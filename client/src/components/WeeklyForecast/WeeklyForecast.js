@@ -24,9 +24,9 @@ function WeeklyForecast({ location }) {
                     listWeather.length > 0 && listWeather.map((item, index) => {
                         if (index !== 0 && index < limit)
                             return (
-                                <div key={index} className="flex items-center justify-around">
+                                <div key={index} className="flex items-center justify-around w-full mb-4">
                                     <WeeklyForecastCard item={item} />
-                                    {<div className={`bg-white w-[1px] h-full`}></div>}
+                                    {index % 4 !== 0 && <div className={`bg-white w-[1px] h-full`}></div>}
                                 </div>
                             )
                     })

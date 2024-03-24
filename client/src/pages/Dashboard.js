@@ -46,7 +46,7 @@ function Dashboard() {
     console.log(currentWeather);
 
     return (
-        <div className='bg-cover bg-center object-cover min-h-[100vh]' style={{ backgroundImage: `url(${background})` }}>
+        <div className='bg-cover bg-center object-cover min-h-[100vh] ' style={{ backgroundImage: `url(${background})` }}>
             <div className='backdrop-blur-sm lg:p-16 md:p-10 p-2 pt-4 grid grid-cols-12 lg:gap-6 md:gap-4 gap-2 bg-cover bg-center' >
                 <div className="left-side lg:col-span-2 md:col-span-3 md:flex hidden">
                     <WorldWeather weather={currentWeather?.current} setCityName={setCurrentCityName} />
