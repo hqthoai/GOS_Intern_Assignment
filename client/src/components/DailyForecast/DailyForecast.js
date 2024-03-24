@@ -7,7 +7,7 @@ function DailyForecast({ location }) {
     const [listWeather, setListWeather] = useState([]);
 
     useEffect(() => {
-        weatherServices.getDailyForecast(location.name, location.localtime.split(' ')[0])
+        location && weatherServices.getDailyForecast(location.name, location.localtime.split(' ')[0])
             .then(data => setListWeather(data.forecast.forecastday[0].hour))
             .catch(error => console.log(error))
     }, [location])

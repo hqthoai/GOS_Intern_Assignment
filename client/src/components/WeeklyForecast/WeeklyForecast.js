@@ -6,7 +6,7 @@ function WeeklyForecast({ location }) {
     const [listWeather, setListWeather] = useState([]);
     const [limit, setLimit] = useState(5);
     useEffect(() => {
-        weatherServices.getNextDayForecast(location.name, 9)
+        location && weatherServices.getNextDayForecast(location.name, 9)
             .then(data => setListWeather(data.forecast.forecastday))
             .catch(error => console.log(error))
     }, [location])

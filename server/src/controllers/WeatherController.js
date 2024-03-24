@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const WEATHER_API_URL = 'https://api.weatherapi.com/v1'
-const API_KEY = process.env.WEATHER_API_KEY;
+const API_KEY = '8187afadbcad46a4bd763306242403';
 const WeatherController = {
     getCurrentWeather: async (req, res) => {
         const location = req.query.q

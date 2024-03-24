@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cors({
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', 'https://gos-intern-assignment.vercel.app'],
     methods: 'GET,POST,PUT,PATCH,DELETE', // Cho phép các phương thức GET và POST
     allowedHeaders: 'Content-Type,Authorization', // Cho phép các tiêu đề yêu cầu cụ thể
     credentials: true // Cho phép truy cập với thông tin chứng thực
