@@ -54,7 +54,7 @@ const mockData = [
 
 function DailyForecast() {
     return (
-        <div className="p-2 bg-slate-100/20 rounded-lg text-white">
+        <div className="p-2 bg-slate-100/20 rounded-lg text-white h-full">
             <div className="flex flex-col text-center">
                 <div className="mb-4">
                     <BorderHeading content={'FORECAST'} fontWeight={700} />

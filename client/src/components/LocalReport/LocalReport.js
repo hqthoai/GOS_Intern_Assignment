@@ -5,13 +5,13 @@ function LocalReport() {
         <div className="p-2 bg-slate-100/20 rounded-lg text-white h-full" >
             <div className="flex flex-col text-center h-full">
                 <BorderHeading content={"LOCAL WEATHER REPORT"} color={'#fff'} fontWeight={700} />
-                <div className="flex flex-col justify-center h-full">
+                <div className="flex flex-col justify-center items-center h-full">
                     <div className='uppercase font-medium'>
                         Sunday, march 24, 2024
                     </div>
-                    <div className="flex items-center text-sm mt-4" >
-                        <img className="w-1/2" src={cloudyRainy} alt="sun" />
-                        <div className="w-1/2 text-[16px] leading-relaxed">
+                    <div className="flex md:flex-row flex-col justify-center items-center text-center text-sm mt-4" >
+                        <img className="md:w-1/2 " src={cloudyRainy} alt="sun" width={'80%'} />
+                        <div className="md:w-1/2 text-[16px] leading-relaxed">
                             <div>
                                 Temp: 33°C
                             </div>
