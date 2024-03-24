@@ -29,7 +29,7 @@ function Searchbar({ setCityName }) {
                     <div className="w-full rounded-sm h-full mr-2">
                         <input
                             {...getInputProps({
-                                placeholder: 'Enter the city name',
+                                placeholder: 'Enter the city name or country',
                                 className: 'w-full h-full mr-2 px-4 rounded-sm',
                             })}
                         />

@@ -43,8 +43,6 @@ function Dashboard() {
             })
     }, [currentCityName])
 
-    console.log(currentWeather);
-
     return (
         <div className='bg-cover bg-center object-cover min-h-[100vh] ' style={{ backgroundImage: `url(${background})` }}>
             <div className='backdrop-blur-sm lg:p-16 md:p-10 p-2 pt-4 grid grid-cols-12 lg:gap-6 md:gap-4 gap-2 bg-cover bg-center' >

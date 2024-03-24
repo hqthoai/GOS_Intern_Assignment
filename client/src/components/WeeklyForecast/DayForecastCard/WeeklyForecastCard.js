@@ -10,13 +10,13 @@ function WeeklyForecastCard({ item }) {
                 <img className="" src={item.day.condition.icon} alt={item.day.condition.name} />
             </div>
             <div className='mb-2'>
-                Wind: {item.day.maxwind_kph}km/h
+                Wind: {(item.day.maxwind_kph).toFixed(1)}km/h
             </div>
             <div className='mb-2'>
                 {item.day.mintemp_c} ~ {item.day.maxtemp_c}°C
             </div>
             <div className='mb-2'>
-                Humidity: {item.day.avghumidity}%
+                Humidity: {(item.day.avghumidity).toFixed(1)}%
             </div>
         </div>
     );
