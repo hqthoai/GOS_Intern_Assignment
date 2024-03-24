@@ -13,7 +13,7 @@ function DailyForecast({ location }) {
     }, [location])
 
     return (
-        <div className="p-2 bg-slate-100/20 rounded-lg text-white h-full">
+        <div className="p-2 bg-slate-100/10 rounded-lg text-white h-full">
             <div className="flex flex-col text-center">
                 <div className="mb-4">
                     <BorderHeading content={'FORECAST'} fontWeight={700} />

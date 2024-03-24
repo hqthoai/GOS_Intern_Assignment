@@ -15,7 +15,7 @@ function Location({ location, setCityName }) {
             });
     }
     return (
-        <div className="flex justify-between p-2 bg-slate-100/20 rounded-lg text-white">
+        <div className="flex justify-between p-2 bg-slate-100/10 rounded-lg text-white text-sm">
             <div className="flex flex-col">
                 <p className="text-xl font-bold">{location && location.name}</p>
                 <p>{location && location.country}</p>

@@ -12,8 +12,8 @@ function Searchbar({ setCityName }) {
         }
     }
     return (
-        <div className="flex p-2 bg-slate-100/20 rounded-lg">
-            <input className="w-full mr-2 px-2 rounded-sm" type="search" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} onKeyPress={handleKeyPress} placeholder="Enter the city name" />
+        <div className="flex p-2 bg-slate-100/10 rounded-lg text-sm">
+            <input className="w-full mr-2 px-4 rounded-sm" type="search" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} onKeyPress={handleKeyPress} placeholder="Enter the city name" />
             <div className="float-left px-3.5 py-2 bg-orange-400 rounded-sm text-white hover:cursor-pointer active:scale-95" onClick={handleSearch} >
                 Search
             </div>
