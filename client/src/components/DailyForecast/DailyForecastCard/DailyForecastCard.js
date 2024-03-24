@@ -1,17 +1,10 @@
-import cloudyDay from '../../../assets/images/cloudy-day_icon.png'
 
-function DailyForecastCard({ time, temp }) {
+function DailyForecastCard({ item }) {
     return (
-        <div className="flex flex-col items-center border-white border-2 p-2 rounded-lg mb-2">
-            <div>
-                {time}
-            </div>
-            <div className='w-3/4' >
-                <img src={cloudyDay} alt="cloudy-day" />
-            </div>
-            <div>
-                {temp}
-            </div>
+        <div className="flex flex-col items-center justify-center border-white border-[1px] p-2 rounded-lg mb-2">
+            {item.time.split(' ')[1]}
+            <img src={item.condition.icon} alt="cloudy-day" className="w-3/4" />
+            {item.temp_c}°C
         </div>
     );
 }

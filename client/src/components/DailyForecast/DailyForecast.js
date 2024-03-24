@@ -1,58 +1,17 @@
+import { useEffect, useState } from "react";
 import BorderHeading from "../BorderHeading/BorderHeading";
 import DailyForecastCard from "./DailyForecastCard/DailyForecastCard";
+import weatherServices from "../../services/WeatherServices";
 
-const mockData = [
-    {
-        temp: '33°C',
-        time: '8AM'
-    },
-    {
-        temp: '34°C',
-        time: '9AM'
-    },
-    {
-        temp: '34°C',
-        time: '10AM'
-    },
-    {
-        temp: '31°C',
-        time: '11AM'
-    },
-    {
-        temp: '30°C',
-        time: '12PM'
-    },
-    {
-        temp: '29°C',
-        time: '1PM'
-    },
-    {
-        temp: '27°C',
-        time: '2PM'
-    },
-    {
-        temp: '30°C',
-        time: '3PM'
-    },
-    {
-        temp: '29°C',
-        time: '4PM'
-    },
-    {
-        temp: '28°C',
-        time: '5PM'
-    },
-    {
-        temp: '27°C',
-        time: '6PM'
-    },
-    {
-        temp: '26°C',
-        time: '7PM'
-    },
-]
+function DailyForecast({ location }) {
+    const [listWeather, setListWeather] = useState([]);
 
-function DailyForecast() {
+    useEffect(() => {
+        weatherServices.getDailyForecast(location.name, location.localtime.split(' ')[0])
+            .then(data => setListWeather(data.forecast.forecastday[0].hour))
+            .catch(error => console.log(error))
+    }, [location])
+
     return (
         <div className="p-2 bg-slate-100/20 rounded-lg text-white h-full">
             <div className="flex flex-col text-center">
@@ -62,10 +21,11 @@ function DailyForecast() {
 
                 <div className="grid md:grid-cols-6 grid-cols-3 gap-2">
                     {
-                        mockData.map((item, index) => {
-                            return (
-                                <DailyForecastCard key={index} time={item.time} temp={item.temp} />
-                            )
+                        listWeather.length > 0 && listWeather.map((item, index) => {
+                            if (index < 12)
+                                return (
+                                    <DailyForecastCard key={index} item={item} />
+                                )
                         })
                     }
                 </div>

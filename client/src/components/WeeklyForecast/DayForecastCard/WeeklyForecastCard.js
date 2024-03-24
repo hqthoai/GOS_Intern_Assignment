@@ -1,22 +1,22 @@
-import cloudy from '../../../assets/images/cloudy.png'
 
-function WeeklyForecastCard({ date, wind, temp, humidity }) {
+function WeeklyForecastCard({ item }) {
+
     return (
         <div className='flex flex-col text-center justify-center items-center md:text-[16px] text-sm'>
             <div className='mb-2 text-ellipsis '>
-                {date}
-            </div>
-            <div className='mb-2 w-1/2'>
-                <img src={cloudy} alt="cloudy" />
+                {item.date}
             </div>
             <div className='mb-2'>
-                Wind: {wind}
+                <img className="" src={item.day.condition.icon} alt={item.day.condition.name} />
             </div>
             <div className='mb-2'>
-                {temp}
+                Wind: {item.day.maxwind_kph}km/h
             </div>
             <div className='mb-2'>
-                Humidity: {humidity}
+                {item.day.mintemp_c} ~ {item.day.maxtemp_c}°C
+            </div>
+            <div className='mb-2'>
+                Humidity: {item.day.avghumidity}%
             </div>
         </div>
     );
