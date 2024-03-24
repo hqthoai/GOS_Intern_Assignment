@@ -4,3 +4,5 @@ Here are steps to run code:
 1. Open the terminal: cd ./client 
 2. Install package: npm install
 3. Start client: npm start
+
+Link demo: https://gos-intern-assignment.vercel.app/
