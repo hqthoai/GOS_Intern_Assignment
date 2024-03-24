@@ -8,7 +8,7 @@ function Location() {
             <div className="flex flex-col justify-center hover:cursor-pointer">
                 <div className="rounded-3xl bg-black/40 w-full px-4 py-2">
                     <i className="fa-solid fa-location-dot mr-2" />
-                    Change Location
+                    Use Your Location
                 </div>
             </div>
         </div>
