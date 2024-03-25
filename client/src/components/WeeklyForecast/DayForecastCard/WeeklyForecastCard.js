@@ -2,11 +2,11 @@
 function WeeklyForecastCard({ item }) {
 
     return (
-        <div className='flex flex-col text-center justify-center items-center md:text-[16px] text-sm w-full'>
+        <div className='flex flex-col text-center justify-center items-center md:text-sm w-full'>
             <div className='mb-2 text-ellipsis '>
                 {item.date}
             </div>
-            <div className='mb-2'>
+            <div className='flex justify-center mb-2 w-full'>
                 <img className="" src={item.day.condition.icon} alt={item.day.condition.name} />
             </div>
             <div className='mb-2'>
