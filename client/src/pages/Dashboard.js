@@ -9,6 +9,7 @@ import WeeklyForecast from "../components/WeeklyForecast/WeeklyForecast";
 import GetCurrentLocation from "../utils/GetCurrentLocation";
 import weatherServices from '../services/WeatherServices';
 import getCityFromCoordinates from "../utils/GetCityName";
+import RegisterReport from "../components/RegisterReport/RegisterReport";
 function Dashboard() {
     const [currentCityName, setCurrentCityName] = useState(null);
     const [currentWeather, setCurrentWeather] = useState(null);
@@ -53,6 +54,7 @@ function Dashboard() {
                     currentWeather !== null &&
                     <div className="right-side lg:col-span-10 md:col-span-9 col-span-12">
                         <div className="grid grid-row gap-4">
+                            {/* <RegisterReport /> */}
                             <Searchbar setCityName={setCurrentCityName} />
                             <Location location={currentWeather.location} setCityName={setCurrentCityName} />
                             <div className="grid grid-cols-3 md:gap-4 gap-2">
