@@ -1,7 +1,9 @@
 require('dotenv').config();
+const nodemailer = require('nodemailer');
 
 const WEATHER_API_URL = 'https://api.weatherapi.com/v1'
 const API_KEY = '8187afadbcad46a4bd763306242403';
+const confirmationCodes = {};
 const WeatherController = {
     getCurrentWeather: async (req, res) => {
         const location = req.query.q
@@ -35,6 +37,63 @@ const WeatherController = {
             res.send(weatherData)
         } catch (error) {
             console.log(error);
+        }
+    },
+    generateRandomCode: () => {
+        let code = '';
+        for (let i = 0; i < 6; i++) {
+            code += Math.floor(Math.random() * 10); // Generate a random digit (0-9)
+        }
+        return code;
+    },
+
+    subscribeNewsletter: async (req, res) => {
+        try {
+            const { email } = req.body;
+            console.log(email);
+            const confirmationCode = WeatherController.generateRandomCode();
+            confirmationCodes[email] = confirmationCode;
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASS,
+                },
+            });
+            const mailOptions = {
+                from: `weather-forecast-newsletter<${process.env.EMAIL_USER}`,
+                to: email,
+                subject: 'Confirm your subscription to Weather Reports',
+                html: `<p>Please use the following code to confirm your subscription: <b>${confirmationCode}</b></p>`,
+            };
+            await transporter.sendMail(mailOptions);
+            res.status(200).json({
+                error: false,
+                message: 'A confirmation code has been sent to your email address.'
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({
+                error: true,
+                message: 'An error occurred while sending the confirmation email.'
+            });
+        }
+    },
+
+    confirmCode: (req, res) => {
+        const { email, confirmationCode } = req.body;
+        if (confirmationCodes[email] === confirmationCode) {
+            delete confirmationCodes[email];
+            // save email to database
+            res.status(200).json({
+                error: false,
+                message: 'Email confirmed. You are now subscribed to weather reports.'
+            });
+        } else {
+            res.status(400).json({
+                error: true,
+                message: 'Invalid confirmation code.'
+            });
         }
     }
 }

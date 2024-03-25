@@ -42,7 +42,39 @@ const weatherServices = {
         } catch (error) {
             console.error(error);
         }
-    }
+    },
+
+    sendEmailSubscriber: async (email) => {
+        try {
+            const response = await fetch(`${API_URL}/subscribe`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    sendCodeConfirm: async (email, confirmationCode) => {
+        try {
+            const response = await fetch(`${API_URL}/confirm`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, confirmationCode })
+            });
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }
 
 export default weatherServices;
