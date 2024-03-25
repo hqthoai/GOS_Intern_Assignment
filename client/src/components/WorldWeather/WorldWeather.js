@@ -67,10 +67,10 @@ function WorldWeather({ weather, setCityName }) {
         <div className="flex flex-col p-2 bg-slate-100/10 rounded-lg text-white h-full">
             <div className="thumb-weather flex flex-col relative min-h-[200px]">
                 <img className='rounded-lg h-full object-cover' src={thumb} alt="world_weather" />
-                <div className='flex absolute bg-black/70 items-center rounded-b-lg bottom-0 left-0 right-0 text-sm'>
+                {/* <div className='flex absolute bg-black/70 items-center rounded-b-lg bottom-0 left-0 right-0 text-sm'>
                     <p className='md:p-2 p-1 grow '>{weather?.condition?.text}</p>
                     <span className='md:p-2 p-2 text-xl'>{weather?.temp_c}°C</span>
-                </div>
+                </div> */}
             </div>
             <div className='mt-4'>
                 <BorderHeading content={"AROUND THE WORLD"} color={"#fff"} fontWeight={700} />

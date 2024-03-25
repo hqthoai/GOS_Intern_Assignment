@@ -5,13 +5,16 @@ function LocalReport({ weather }) {
         <div className="p-2 bg-slate-100/10 rounded-lg text-white h-full text-sm" >
             <div className="flex flex-col text-center h-full">
                 <BorderHeading content={"LOCAL WEATHER REPORT"} color={'#fff'} fontWeight={700} />
-                <div className="flex flex-col justify-center items-center h-full">
+                <div className="flex flex-col justify-center items-center h-full mt-2">
                     <div className='uppercase font-medium lg:text-2xl'>
                         {weather.location && weather.location.localtime.split(' ')[0]}
                     </div>
                     <div className="flex md:flex-row flex-col justify-center items-center text-center text-sm mt-4 w-full" >
                         <img className="md:w-1/2 mr-1" src={weather?.current?.condition?.icon} alt="sun" width={'80%'} />
                         <div className="md:w-1/2 leading-7">
+                            <div className="font-medium  text-base md:text-xl mb-1">
+                                {weather.current.condition.text}
+                            </div>
                             <div>
                                 Temp: {weather.current && weather.current.feelslike_c}°C
                             </div>
