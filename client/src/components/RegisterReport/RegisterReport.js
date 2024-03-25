@@ -2,19 +2,17 @@ import { useState } from "react";
 
 function RegisterReport() {
     const [input, setInput] = useState('');
-    const handleRegister = () => {
-
+    const handleRegister = (e) => {
+        e.preventDefault();
+        // Call api to send authen code
     }
     return (
-        <div className="flex md:flex-row flex-col p-2 bg-slate-100/10 rounded-lg text-sm w-full justify-center items-center ">
-            <label htmlFor="email-register" className="block md:text-sm text-xs md:w-1/2 text-white mr-2 md:mb-0 mb-2">
-                Enter email to receive weather forecast report daily ?
-            </label>
-            <div className="flex h-full w-full items-center">
-                <input className="h-9 w-full mr-2 px-4" type="text" id="email-register" name="email-register" value={input} placeholder="Enter your email" onChange={(e) => setInput(e.target.value)} />
-                <div className="h-9 px-3.5 py-2 bg-green-400 rounded-sm text-white text-center hover:cursor-pointer active:scale-95" onClick={handleRegister}>
-                    Register
-                </div>
+        <div className="grid grid-cols-2 gap-2 mx-auto w-full mb-4 md:text-start text-center justify-center items-center">
+            <h2 className="md:col-span-1 col-span-2 lg:text-xl md:text-md font-bold tracking-tight text-white">Want daily weather forecast news? <br />Sign up for our newsletter</h2>
+            <div className="md:col-span-1 col-span-2 mx-auto w-full text-white items-center justify-center flex" >
+                {/* <label for="email-address" className="sr-only">Email address</label> */}
+                <input id="email-address" value={input} onChange={(e) => setInput(e.target.value)} name="email" type="email" autoComplete="email" required className="md:w-full mr-2 rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" placeholder="Enter your email" />
+                <button type="submit" onClick={handleRegister} className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 active:scale-95">Subscribe</button>
             </div>
         </div>
     );

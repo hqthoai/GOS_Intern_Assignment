@@ -54,7 +54,7 @@ function Dashboard() {
                     currentWeather !== null &&
                     <div className="right-side lg:col-span-10 md:col-span-9 col-span-12">
                         <div className="grid grid-row gap-4">
-                            {/* <RegisterReport /> */}
+                            <RegisterReport />
                             <Searchbar setCityName={setCurrentCityName} />
                             <Location location={currentWeather.location} weather={currentWeather.current} setCityName={setCurrentCityName} />
                             <div className="grid grid-cols-3 md:gap-4 gap-2">

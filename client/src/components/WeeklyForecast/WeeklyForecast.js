@@ -46,7 +46,7 @@ function WeeklyForecast({ location }) {
                             return (
                                 <div key={index} className="flex items-center justify-center w-full mb-4">
                                     <WeeklyForecastCard item={item} />
-                                    {index % (isMobile ? 2 : limit - 1) !== 0 && <div className={`bg-white w-[1px] h-full`}></div>}
+                                    {index % (isMobile ? 2 : (4)) !== 0 && <div className={`bg-white w-[1px] h-full`}></div>}
                                 </div>
                             )
                     })
