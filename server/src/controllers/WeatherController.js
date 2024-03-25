@@ -56,12 +56,12 @@ const WeatherController = {
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: process.env.EMAIL_USER,
-                    pass: process.env.EMAIL_PASS,
+                    user: "thoaifamily83@gmail.com",
+                    pass: "jjzb dbwl lvkv mjod",
                 },
             });
             const mailOptions = {
-                from: `weather-forecast-newsletter<${process.env.EMAIL_USER}`,
+                from: `weather-forecast-newsletter<thoaifamily83@gmail.com"`,
                 to: email,
                 subject: 'Confirm your subscription to Weather Reports',
                 html: `<p>Please use the following code to confirm your subscription: <b>${confirmationCode}</b></p>`,
